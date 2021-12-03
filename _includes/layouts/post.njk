@@ -1,0 +1,17 @@
+---
+tags: ['post']
+---
+
+{% extends 'layouts/page.njk' %}
+
+{% block main %}
+    {{ content | safe }}
+{% endblock %}
+
+<style>
+    {% set css %}
+    #title {
+        text-align: center;
+    }
+    {% endset %}
+</style>

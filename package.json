@@ -1,0 +1,28 @@
+{
+  "name": "11ty-nunjucks-sfc",
+  "version": "1.0.0",
+  "description": "How to create Vue-like Single File Components with Nunjucks in Eleventy.",
+  "main": "index.js",
+  "scripts": {
+    "build": "ELEVENTY_ENV=production eleventy",
+    "serve": "ELEVENTY_ENV=production eleventy --serve",
+    "dev": "ELEVENTY_ENV=development eleventy --quiet --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troyvassalotti/11ty-nunjucks-sfc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/troyvassalotti/11ty-nunjucks-sfc/issues"
+  },
+  "homepage": "https://github.com/troyvassalotti/11ty-nunjucks-sfc#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0-beta.8",
+    "clean-css": "^5.2.2",
+    "terser": "^5.10.0"
+  }
+}

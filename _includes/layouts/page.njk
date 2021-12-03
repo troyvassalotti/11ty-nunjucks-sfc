@@ -1,0 +1,23 @@
+{% extends 'layouts/base.njk' %}
+
+<script>
+    {% set js %}
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation'
+
+    const pageTitle = document.querySelector('#title')
+    const annotation = annotate(pageTitle, {
+        type: 'circle',
+        color: 'green',
+        padding: 2,
+    })
+
+    annotation.show()
+    {% endset %}
+</script>
+
+{% block content %}
+    <main>
+        <h2 id="title">{{ title }}</h2>
+        {% block main %}{% endblock %}
+    </main>
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Single File Components in Nunjucks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+
+    {%- block style %}
+        {%- if css %}
+            {%- if site.environment == "production" %}
+                <style>{{ css | cssmin | safe }}</style>
+            {% elseif site.environment == "development" %}
+                <style>{{ css | safe }}</style>
+            {% endif -%}
+        {% endif -%}
+    {% endblock -%}
+
+</head>
+<body>
+<header>
+    <h1>Creating Single File Components in Nunjucks</h1>
+</header>
+
+{%- block content %}{% endblock -%}
+
+{%- block script %}
+    {%- if js %}
+        {%- if site.environment == "production" %}
+            <script type="module">{{ js | jsmin | safe }}</script>
+            {%- elseif site.environment == "development" %}
+            <script type="module">{{ js | safe }}</script>
+        {% endif -%}
+    {% endif -%}
+{% endblock -%}
+</body>
+</html>

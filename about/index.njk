@@ -1,0 +1,59 @@
+{% extends 'layouts/base.njk' %}
+
+<script>
+    {% set js %}
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation'
+
+    const pageTitle = document.querySelector('#title')
+    const annotation = annotate(pageTitle, {
+        type: 'underline',
+        color: 'red',
+        padding: 2,
+    })
+
+    annotation.show()
+    {% endset %}
+</script>
+
+{% block content %}
+    <main>
+        <h2 id="title">The About Page</h2>
+        <p>This page extends the same <code>base.njk</code> layout with new CSS and JS.</p>
+        <div class="layout">
+            <div class="square">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sequi nam, eligendi quibusdam eius
+                    porro veniam libero voluptatibus voluptatum? Accusamus, nostrum voluptate. Enim tenetur repudiandae
+                    illo corrupti magni voluptatibus aperiam?</p>
+            </div>
+            <div class="square">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sequi nam, eligendi quibusdam eius
+                    porro veniam libero voluptatibus voluptatum? Accusamus, nostrum voluptate. Enim tenetur repudiandae
+                    illo corrupti magni voluptatibus aperiam?</p>
+            </div>
+            <div class="square">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sequi nam, eligendi quibusdam eius
+                    porro veniam libero voluptatibus voluptatum? Accusamus, nostrum voluptate. Enim tenetur repudiandae
+                    illo corrupti magni voluptatibus aperiam?</p>
+            </div>
+        </div>
+        <div class="image">
+            <img src='https://images.unsplash.com/photo-1637271119937-5852df38427a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNzY4ODYwOA&ixlib=rb-1.2.1&q=80&w=400'
+                 alt='A cute dog'>
+        </div>
+        <p><a href="/" class="home-link">Go Back Home</a></p>
+    </main>
+{% endblock %}
+
+<style>
+    {% set css %}
+    .layout {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .home-link {
+        font-size: 200%;
+    }
+    {% endset %}
+</style>

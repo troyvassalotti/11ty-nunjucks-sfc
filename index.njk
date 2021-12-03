@@ -1,0 +1,37 @@
+{% extends 'layouts/base.njk' %}
+
+<script>
+    {% set js %}
+    import {annotate} from 'https://cdn.skypack.dev/rough-notation'
+
+    const pageTitle = document.querySelector('#title')
+    const annotation = annotate(pageTitle, {
+        type: 'highlight',
+        color: 'rebeccapurple',
+        padding: 5,
+    })
+
+    annotation.show()
+    {% endset %}
+</script>
+
+{% block content %}
+    <main>
+        <h2 id="title">This is the homepage</h2>
+        <p>It extends the <code>base.njk</code> layout file and contains its own unique CSS and JS. You can analyze the
+            processed <code>index.html</code> file to see how the inlined styles and scripts get added.</p>
+        <p>Try navigating to the <a href="/about/">about page</a> and see how the result is different. You could
+            also choose to not set CSS or JS variables, in which case the layout will ignore those blocks. See that in
+            action on the <a href="/empty/">empty page</a>. Maybe you want to try nesting layouts and still uses these single file components? Try looking at
+            <a href="/nested/">the nested example</a>.</p>
+    </main>
+{% endblock %}
+
+<style>
+    {% set css %}
+    #title {
+        font-size: 4rem;
+    }
+
+    {% endset %}
+</style>

@@ -1,0 +1,22 @@
+---
+title: Nested Pages
+---
+
+{% extends 'layouts/page.njk' %}
+
+{% block main %}
+    <p>This page extends a separate layout <code>page.njk</code> which itself extends <code>base.njk</code>. Listed below are a few posts to show how a blog post written in Markdown can use its own layout file that also extends another layout file which itself extends the <code>base.njk</code>. The levels are deep here!</p>
+    <ul>
+        {% for post in collections.post %}
+            <li class="post"><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+<style>
+    {% set css %}
+    .post {
+        text-align: center;
+    }
+    {% endset %}
+</style>
