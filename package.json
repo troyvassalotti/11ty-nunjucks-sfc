@@ -23,6 +23,6 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0-beta.8",
     "clean-css": "^5.2.2",
-    "terser": "^5.10.0"
+    "terser": "^5.14.2"
   }
 }
